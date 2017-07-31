@@ -103,6 +103,9 @@ header .menu .navbar_end .navbar_end_btn {
 	position: relative;
 	width: 100%;
 }
+header .menu .navbar_end .navbar_end_btn.navbar_end_btn_desktop {
+	display: none;
+}
 
 header .menu .navbar_end .navbar_end_btn:before {
 	content: "";
@@ -140,6 +143,13 @@ header .menu .navbar_end .navbar_end_btn span + span {
 
 	header .menu .menu_bar li.desktop-hidden {
 		display: none;
+	}
+
+	header .menu .navbar_end .navbar_end_btn.navbar_end_btn_mobile {
+		display: none;
+	}
+	header .menu .navbar_end .navbar_end_btn.navbar_end_btn_desktop {
+		display: block;
 	}
 
 }

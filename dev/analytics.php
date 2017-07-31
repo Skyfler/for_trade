@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="page-analytics">
+<html lang="ru" class="page-analytics">
 <head>
 	<?php require('include/head.php'); ?>
 	<title>Аналитика</title>

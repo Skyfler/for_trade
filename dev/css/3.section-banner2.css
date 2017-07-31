@@ -1,6 +1,23 @@
 .banner2 {
-	height: 250px;
-	background-color: #002458;
-	color: #fff;
+/*	height: 250px;*/
+/*	background-color: #002458;*/
+/*	color: #fff;*/
 	text-align: center;
+	display: none;
+}
+
+.banner2 a {
+	display: block;
+}
+
+.banner2 img {
+	width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+
+	.banner2 {
+		display: block;
+	}
+
 }

@@ -4,8 +4,8 @@
 		<div class="text_block_inner">
 			<p class="first_line">Сделай рынок форекс доступным
 			<br>для себя вместе с нами</p>
-			<p class="second_line">ЗАРЕГИСТРИРУЙСЯ
-			<br>И ПРОЙДИ КУРС ОБУЧЕНИЯ!</p>
+			<p class="second_line">
+			<br></p>
 			<a href="#" class="banner_btn">
 				<span>Активировать <b>премиум пакет</b></span>
 			</a>
