@@ -1,0 +1,39 @@
+.analytics {
+	padding-top: 33px;
+	padding-bottom: 37px;
+}
+
+.analytics .title {
+	font-size: 20px;
+	font-weight: 700;
+	color: #333333;
+	text-transform: uppercase;
+	margin-bottom: 25px;
+}
+
+.analytics .text_block {
+	margin-top: 50px;
+}
+
+.analytics .text_block p {
+	font-size: 14px;
+	color: #666666;
+	line-height: 18px;
+	margin-top: 15px;
+}
+.analytics .text_block p + p {
+	margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+
+	.analytics {
+		padding-top: 50px;
+		padding-bottom: 70px;
+	}
+
+	.analytics .title {
+		font-size: 24px;
+	}
+
+}

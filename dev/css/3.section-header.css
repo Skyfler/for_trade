@@ -1,0 +1,227 @@
+header {
+	position: relative;
+}
+
+header .menu {
+	height: 100%;
+}
+
+header .menu .navbar_header {
+	padding: 0 15px;
+	width: 100%;
+	height: 80px;
+	border-bottom: 3px solid #1f8ffd;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	position: relative;
+}
+
+header .menu .navbar_header h1 {
+	height: 100%;
+	max-width: 180px
+}
+
+header .menu .navbar_header .navbar_brand {
+	height: 100%;
+}
+
+header .menu .navbar_header .dropdown_toggle {
+	padding: 0 15px;
+	background-color: transparent;
+	border: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	transition: background ease 0.5s;
+}
+
+header .menu .navbar_header .dropdown_toggle .icon_bar {
+	background-color: #000;
+	display: block;
+	width: 32px;
+	height: 3px;
+	border-radius: 1px;
+	opacity: 1;
+	transition:
+		transform ease 0.5s,
+		opacity ease 0.5s;
+}
+header .menu.open .navbar_header .dropdown_toggle .icon_bar:nth-child(1) {
+	transform: translateY(9px) rotate(45deg);
+}
+header .menu.open .navbar_header .dropdown_toggle .icon_bar:nth-child(2) {
+	opacity: 0;
+}
+header .menu.open .navbar_header .dropdown_toggle .icon_bar:nth-child(3) {
+	transform: translateY(-9px) rotate(-45deg);
+}
+header .menu .navbar_header .dropdown_toggle .icon_bar+.icon_bar {
+	margin-top: 6px;
+}
+
+header .menu .dropdown_container {
+	box-shadow: inset 0 -1px 0 #ddd;
+}
+
+header .menu .menu_bar {
+	padding: 15px 0;
+	position: static;
+}
+
+header .menu .menu_bar>li>a {
+	color: #2e3346;
+	padding: 10px 0 10px 25px;
+	font-weight: 500;
+	font-size: 15px;
+	color: #2e3346;
+	display: flex;
+	transition: color ease 0.5s;
+}
+header .menu .menu_bar>li.active>a,
+header .menu .menu_bar>li:hover>a {
+	color: #1f8ffd;
+}
+
+header .menu .navbar_end {
+	float: left;
+	height: 100%;
+	margin: 0 0 15px 25px;
+}
+
+header .menu .navbar_end .navbar_end_btn {
+	padding: 15px 0;
+	display: block;
+	background: linear-gradient(to left, #30bbfd 5px, #1f8ffd);
+	text-transform: uppercase;
+	font-weight: 700;
+	color: #fff;
+	width: 165px;
+	text-align: center;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	position: relative;
+}
+
+header .menu .navbar_end .navbar_end_btn:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #1f8ffd;
+	width: 0;
+	height: 100%;
+	transition: width ease 0.5s;
+}
+header .menu .navbar_end .navbar_end_btn:hover:before {
+	width: calc(100% - 5px);
+}
+
+header .menu .navbar_end .navbar_end_btn span {
+	display: block;
+	font-size: 12px;
+	position: relative;
+}
+header .menu .navbar_end .navbar_end_btn span + span {
+	font-size: 11px;
+}
+
+@media screen and (min-width: 768px) {
+
+	header .menu .navbar_header {
+		padding: 0 30px;
+	}
+
+	header .menu .navbar_header .dropdown_toggle {
+		padding: 0 30px;
+	}
+
+	header .menu .menu_bar li.desktop-hidden {
+		display: none;
+	}
+
+}
+
+@media screen and (max-width: 899px) {
+
+	header .menu {
+		padding-right: 0 !important;
+		padding-left: 0 !important;
+	}
+
+	header .menu .navbar_header .dropdown_toggle {
+		display: block;
+	}
+
+	header .menu .menu_bar>li {
+		display: block;
+		text-align: left;
+	}
+}
+
+@media screen and (min-width: 900px) {
+
+	header {
+		height: 80px;
+		border-bottom: 3px solid #1f8ffd;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		position: relative;
+	}
+
+	header .menu .navbar_header {
+		float: left;
+		margin: 0;
+		padding: 0;
+		border-bottom: none;
+		width: auto;
+		height: 100%;
+		box-shadow: none;
+	}
+
+	header .menu .menu_bar {
+		padding: 0;
+		height: 100%;
+		float: left;
+	}
+
+	header .menu .menu_bar li {
+		display: block;
+		float: left;
+		height: 100%;
+		position: relative;
+	}
+
+	header .menu .menu_bar li.active:before {
+		content: "";
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+		border-bottom: 8px solid #1f8ffd;
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: calc(50% - 5px);
+	}
+
+	header .menu .menu_bar>li>a {
+		text-align: center;
+		height: 100%;
+		margin: 0;
+		padding: 0 8px;
+	}
+
+	header .menu .dropdown_container {
+		margin: 0;
+		float: right;
+		box-shadow: none;
+		height: 100%!important;
+	}
+
+	header .menu .dropdown_bar {
+		height: 100%;
+	}
+
+	header .menu .navbar_end {
+		height: 100%;
+		margin: 0 0 0 15px;
+	}
+
+}

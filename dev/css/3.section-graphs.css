@@ -1,0 +1,51 @@
+.graphs {
+	padding-top: 33px;
+	padding-bottom: 37px;
+}
+
+.graphs .text_block {
+	width: 100%;
+	text-align: center;
+	padding-bottom: 37px;
+}
+
+.graphs .text_block .title {
+	font-size: 20px;
+	font-weight: 700;
+	color: #333333;
+	text-transform: uppercase;
+}
+
+.graphs .text_block .description {
+	font-size: 14px;
+	color: #666666;
+	line-height: 18px;
+	margin-top: 15px;
+}
+
+.graphs .block {
+	width: 100%;
+	overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+
+	.graphs .text_block {
+		padding-bottom: 52px;
+	}
+
+	.graphs .text_block .title {
+		font-size: 24px;
+	}
+
+	.graphs .block {
+		width: 33.3333333%;
+		padding-right: 15px;
+	}
+	.graphs .block + .block {
+		width: 66.6666666%;
+		padding-right: 0;
+		padding-left: 15px;
+	}
+
+}
