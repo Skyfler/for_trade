@@ -19,16 +19,16 @@
 						<a href="/" class="flex flex-center-y"><span>Главная</span></a>
 					</li>
 					<li class="desktop-hidden <?= $activeMenu === 'analytics' ? 'active' : ""; ?>">
-						<a href="analytics.php" class="flex flex-center-y"><span>Теханалитика</span></a>
+						<a href="analytics" class="flex flex-center-y"><span>Теханалитика</span></a>
 					</li>
 					<li class="<?= $activeMenu === 'calendar' ? 'active' : ""; ?>">
-						<a href="calendar.php" class="flex flex-center-y"><span>Экономический календарь</span></a>
+						<a href="calendar" class="flex flex-center-y"><span>Экономический календарь</span></a>
 					</li>
 					<li class="<?= $activeMenu === 'instruction' ? 'active' : ""; ?>">
-						<a href="instruction.php" class="flex flex-center-y"><span>Инструкция</span></a>
+						<a href="instruction" class="flex flex-center-y"><span>Инструкция</span></a>
 					</li>
 					<li class="<?= $activeMenu === 'about' ? 'active' : ""; ?>">
-						<a href="about.php" class="flex flex-center-y"><span>О нас</span></a>
+						<a href="about" class="flex flex-center-y"><span>О нас</span></a>
 					</li>
 				</ul>
 				<div class="navbar_end flex flex-center-y">
