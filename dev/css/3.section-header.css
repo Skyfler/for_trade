@@ -85,7 +85,9 @@ header .menu .menu_bar>li:hover>a {
 header .menu .navbar_end {
 	float: left;
 	height: 100%;
-	margin: 0 0 15px 25px;
+/*	margin: 0 0 15px 25px;*/
+	width: 100%;
+	padding: 0 15px 15px 25px;
 }
 
 header .menu .navbar_end .navbar_end_btn {
@@ -99,6 +101,7 @@ header .menu .navbar_end .navbar_end_btn {
 	text-align: center;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	position: relative;
+	width: 100%;
 }
 
 header .menu .navbar_end .navbar_end_btn:before {
@@ -222,6 +225,12 @@ header .menu .navbar_end .navbar_end_btn span + span {
 	header .menu .navbar_end {
 		height: 100%;
 		margin: 0 0 0 15px;
+		padding: 0;
+		width: auto;
+	}
+
+	header .menu .navbar_end .navbar_end_btn {
+		width: 165px;
 	}
 
 }
