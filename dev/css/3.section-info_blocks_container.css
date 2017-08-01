@@ -26,6 +26,15 @@
 	border-color: #1f90fd;
 }
 
+.info_blocks_container .info_block .info_block_inner .icon i:before {
+	font-size: 58px;
+	background: linear-gradient(to right, #1f8ffd, #30bbfd);
+	background-clip: text;
+/*	text-fill-color: transparent;*/
+	color: transparent;
+}
+
+/*
 .info_blocks_container .info_block .info_block_inner:before {
 	content: "";
 	width: 56px;
@@ -47,6 +56,7 @@
 .info_blocks_container .info_block.trade .info_block_inner:before {
 	background-position: -300% 0;
 }
+*/
 
 .info_blocks_container .info_block .title {
 	font-weight: 700;
@@ -58,7 +68,7 @@
 .info_blocks_container .info_block .description {
 	color: #666666;
 	font-size: 14px;
-	margin-top: 22px;
+		margin-top: 20px;
 }
 
 @media screen and (min-width: 768px) {

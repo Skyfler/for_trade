@@ -35,24 +35,28 @@
 		<div class="info_blocks_container_inner flex">
 			<div class="info_block recomendations flex">
 				<div class="info_block_inner">
+					<div class="icon"><i class="fa fa-line-chart" aria-hidden="true"></i></div>
 					<div class="title">Прямые торговые рекомендации</div>
 					<div class="description">Данные торговые рекомендации  подсказывают трейдеру важную информацию: по какому активу и с каких уровней стоит совершать операцию.</div>
 				</div>
 			</div>
 			<div class="info_block risks flex">
 				<div class="info_block_inner">
+					<div class="icon"><i class="fa fa-star-half-o" aria-hidden="true"></i></div>
 					<div class="title">Минимизация рисков</div>
 					<div class="description">Главная цель трейдера - минимизировать риски. Компания Signals-fx&trade; делает все для того, чтобы ее трейдеры получали доход от совершаемых сделок.</div>
 				</div>
 			</div>
 			<div class="info_block analysis flex">
 				<div class="info_block_inner">
+					<div class="icon"><i class="fa fa-star" aria-hidden="true"></i></div>
 					<div class="title">Фундаментальный анализ рынка</div>
 					<div class="description">Аналитика рынка форекс от нашего ресурса подскажет вам на какие экономические события стоит обратить внимание.</div>
 				</div>
 			</div>
 			<div class="info_block trade flex">
 				<div class="info_block_inner">
+					<div class="icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></div>
 					<div class="title">Торговля для новичков на форекс</div>
 					<div class="description">Вы можете воспользоваться бесплатным обучением, участвовать в вебинарах от специалистов рынка и финансовых аналитиков.</div>
 				</div>
