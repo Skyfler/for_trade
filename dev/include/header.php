@@ -32,11 +32,11 @@
 					</li>
 				</ul>
 				<div class="navbar_end flex flex-center-y">
-					<a href="https://www.fortrade.com/aff/143636/fortradeccpayments/" class="navbar_end_btn navbar_end_btn_desktop">
+					<a href="https://www.fortrade.com/aff/143636/fortradeccpayments/" target="_blank" class="navbar_end_btn navbar_end_btn_desktop">
 						<span>Активировать</span>
 						<span>Премиум пакет</span>
 					</a>
-					<a href="https://www.fortrade.com/aff/143636/fortradeccpayments/" class="navbar_end_btn navbar_end_btn_mobile">
+					<a href="https://www.fortrade.com/aff/143636/fortradeccpayments/" target="_blank" class="navbar_end_btn navbar_end_btn_mobile">
 						<span>Активировать</span>
 						<span>Премиум пакет</span>
 					</a>

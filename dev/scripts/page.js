@@ -7,6 +7,7 @@
 	var Menu = require('./dropdown-menu');
 	var MarketTrendsWidget = require('./marketTrendsWidget');
 	var ChartWidget = require('./chartWidget');
+	var Slider = require('./slider');
 
 	_polyfills.init();
 	_extendStandartPrototypes.init();
@@ -35,6 +36,15 @@
 		var chartWidget = new ChartWidget({
 			elem: chartWidgetElem,
 			breakPonit: analyticsPage ? 0 : 768
+		});
+	}
+
+	var mainSliderElem = document.querySelector('#main_slider');
+	if (mainSliderElem) {
+		var mainSlider = new Slider({
+			elem: mainSliderElem,
+			delay: 5000,
+			breakPoint: 768
 		});
 	}
 

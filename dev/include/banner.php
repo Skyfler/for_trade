@@ -6,7 +6,7 @@
 			<br>для себя вместе с нами</p>
 			<p class="second_line">
 			<br></p>
-			<a href="#" class="banner_btn">
+			<a href="https://www.fortrade.com/aff/143636/fortradeccpayments/" target="_blank" class="banner_btn">
 				<span>Активировать <b>премиум пакет</b></span>
 			</a>
 		</div>

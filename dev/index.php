@@ -27,9 +27,27 @@
 		</div>
 	</section>
 	<section class="banner2 container">
-		<a href="#">
-			<img src="img/RU_Trade-Online_picture_970x250.gif" alt="" class="responsive_img">
-		</a>
+		<div class="slider" id="main_slider">
+			<div class="overflow_hidden_container">
+				<div class="overflow_block clr flex flex-center-v">
+					<div class="slider_slide" data-component="slide">
+						<a href="https://www.fortrade.com/ru/?B=5735&A=143636&mtId=5735" target="_blank">
+							<img src="img/RU_Trade-Online_picture_970x250%20frame_0.png" alt="" class="responsive_img">
+						</a>
+					</div>
+					<div class="slider_slide" data-component="slide">
+						<a href="https://www.fortrade.com/ru/?B=5735&A=143636&mtId=5735" target="_blank">
+							<img src="img/RU_Trade-Online_picture_970x250%20frame_1.png" alt="" class="responsive_img">
+						</a>
+					</div>
+					<div class="slider_slide" data-component="slide">
+						<a href="https://www.fortrade.com/ru/?B=5735&A=143636&mtId=5735" target="_blank">
+							<img src="img/RU_Trade-Online_picture_970x250%20frame_2.png" alt="" class="responsive_img">
+						</a>
+					</div>
+				</div>
+			</div>
+	   </div>
 	</section>
 	<section class="info_blocks_container">
 		<div class="info_blocks_container_inner flex">
