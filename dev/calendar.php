@@ -10,7 +10,7 @@
 		require('include/header.php');
 	?>
 	<section class="calendar container">
-		<h2 class="title">Экономический календарь <a href="#" class="rss"></a></h2>
+		<h2 class="title">Экономический календарь <!--<a href="#" class="rss"></a>--></h2>
 		<div class="calendar_container">
 			<!-- Economic Calendar Widget BEGIN -->
 			<script id="economicCalendarWidget" type="text/javascript" src="https://c.mql5.com/js/widgets/calendar/widget.v1.js"></script>
@@ -25,6 +25,7 @@
 		</div>
 	</section>
 	<?php require('include/banner.php'); ?>
+	<?php require('include/form_popup.php'); ?>
 	<?php require('include/footer.php'); ?>
 </body>
 </html>

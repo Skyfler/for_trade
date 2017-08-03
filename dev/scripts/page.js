@@ -8,6 +8,8 @@
 	var MarketTrendsWidget = require('./marketTrendsWidget');
 	var ChartWidget = require('./chartWidget');
 	var Slider = require('./slider');
+//	var ContactFormController = require('./contactFormController');
+	var Popup = require('./popup');
 
 	_polyfills.init();
 	_extendStandartPrototypes.init();
@@ -45,6 +47,24 @@
 			elem: mainSliderElem,
 			delay: 5000,
 			breakPoint: 768
+		});
+	}
+
+//	var contactFormElem = document.querySelector('#contact_form');
+//	if (contactFormElem) {
+//		var contactForm = new ContactFormController({
+//			elem: contactFormElem,
+//			actionUrl: contactFormElem.action,
+//			method: contactFormElem.method
+//		});
+//	}
+
+	var formPopupElem = document.querySelector('.form_popup');
+	if (formPopupElem) {
+		var popup = new Popup({
+			elem: formPopupElem,
+			popupOpenBtnSelector: '[data-popup="open"]',
+			popupCloseBtnSelector: '[data-popup="close"]'
 		});
 	}
 

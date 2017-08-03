@@ -37,6 +37,7 @@
 -->
 	</section>
 	<?php require('include/banner.php'); ?>
+	<?php require('include/form_popup.php'); ?>
 	<?php require('include/footer.php'); ?>
 </body>
 </html>

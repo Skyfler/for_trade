@@ -2,7 +2,7 @@
 <html lang="ru" class="page-index">
 <head>
 	<?php require('include/head.php'); ?>
-	<title>SIXPRO</title>
+	<title>SIGFXPRO</title>
 </head>
 <body>
 	<?php
@@ -31,17 +31,17 @@
 			<div class="overflow_hidden_container">
 				<div class="overflow_block clr flex flex-center-v">
 					<div class="slider_slide" data-component="slide">
-						<a href="https://www.fortrade.com/ru/?B=5735&A=143636&mtId=5735" target="_blank">
+						<a href="https://www.fortrade.com/ru/?B=5735&A=143636&mtId=5735" target="_blank" data-popup="open">
 							<img src="img/RU_Trade-Online_picture_970x250%20frame_0.png" alt="" class="responsive_img">
 						</a>
 					</div>
 					<div class="slider_slide" data-component="slide">
-						<a href="https://www.fortrade.com/ru/?B=5735&A=143636&mtId=5735" target="_blank">
+						<a href="https://www.fortrade.com/ru/?B=5735&A=143636&mtId=5735" target="_blank" data-popup="open">
 							<img src="img/RU_Trade-Online_picture_970x250%20frame_1.png" alt="" class="responsive_img">
 						</a>
 					</div>
 					<div class="slider_slide" data-component="slide">
-						<a href="https://www.fortrade.com/ru/?B=5735&A=143636&mtId=5735" target="_blank">
+						<a href="https://www.fortrade.com/ru/?B=5735&A=143636&mtId=5735" target="_blank" data-popup="open">
 							<img src="img/RU_Trade-Online_picture_970x250%20frame_2.png" alt="" class="responsive_img">
 						</a>
 					</div>
@@ -54,33 +54,34 @@
 			<div class="info_block recomendations flex">
 				<div class="info_block_inner">
 					<div class="icon"><i class="fa fa-line-chart" aria-hidden="true"></i></div>
-					<div class="title">Прямые торговые рекомендации</div>
-					<div class="description">Данные торговые рекомендации  подсказывают трейдеру важную информацию: по какому активу и с каких уровней стоит совершать операцию.</div>
+					<div class="title">Торговые сигналы в реальном времени</div>
+					<div class="description">Базируются на техническом анализе и предоставляют трейдеру рекомендации для входа в рынок по тому или иному активу. Идеально подходит, как новичкам, так и трейдерам с опытом.</div>
 				</div>
 			</div>
 			<div class="info_block risks flex">
 				<div class="info_block_inner">
 					<div class="icon"><i class="fa fa-star-half-o" aria-hidden="true"></i></div>
-					<div class="title">Минимизация рисков</div>
-					<div class="description">Главная цель трейдера - минимизировать риски. Компания Signals-fx&trade; делает все для того, чтобы ее трейдеры получали доход от совершаемых сделок.</div>
+					<div class="title">Теханализ</div>
+					<div class="description">Живые графики, а так же широкий выбор  инструментов и индикаторов  для проведения анализа выбранного актива.</div>
 				</div>
 			</div>
 			<div class="info_block analysis flex">
 				<div class="info_block_inner">
 					<div class="icon"><i class="fa fa-star" aria-hidden="true"></i></div>
-					<div class="title">Фундаментальный анализ рынка</div>
-					<div class="description">Аналитика рынка форекс от нашего ресурса подскажет вам на какие экономические события стоит обратить внимание.</div>
+					<div class="title">Теханализ (Премиум пакет)</div>
+					<div class="description">V.I.P услуга для трейдеров, желающих получать детальную информацию о каждой сделке. Обновляется ежедневно профессиональными трейдерами.</div>
 				</div>
 			</div>
 			<div class="info_block trade flex">
 				<div class="info_block_inner">
 					<div class="icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></div>
-					<div class="title">Торговля для новичков на форекс</div>
-					<div class="description">Вы можете воспользоваться бесплатным обучением, участвовать в вебинарах от специалистов рынка и финансовых аналитиков.</div>
+					<div class="title">Экономический календарь</div>
+					<div class="description">Показывает время выхода важных новостей и экономических показателей, а так же их силу  влияния на рынок. Необходимый инструмент для каждого трейдера.</div>
 				</div>
 			</div>
 		</div>
 	</section>
+	<?php require('include/form_popup.php'); ?>
 	<?php require('include/footer.php'); ?>
 </body>
 </html>

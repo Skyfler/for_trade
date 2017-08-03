@@ -3,7 +3,7 @@
 		<div class="navbar_header clr">
 			<h1 class="clr">
 				<a href="/" class="navbar_brand flex flex-center-y">
-					<img src="img/logo.png" alt="SIXPRO" class="responsive_img">
+					<img src="img/logo.png" alt="SIGFXPRO" class="responsive_img">
 				</a>
 			</h1>
 			<button class="dropdown_toggle" data-component="dropdown_toggle">
@@ -19,7 +19,7 @@
 						<a href="/" class="flex flex-center-y"><span>Главная</span></a>
 					</li>
 					<li class="desktop-hidden <?= $activeMenu === 'analytics' ? 'active' : ""; ?>">
-						<a href="analytics" class="flex flex-center-y"><span>Теханалитика</span></a>
+						<a href="analytics" class="flex flex-center-y"><span>Теханализ(Премиум пакет)</span></a>
 					</li>
 					<li class="<?= $activeMenu === 'calendar' ? 'active' : ""; ?>">
 						<a href="calendar" class="flex flex-center-y"><span>Экономический календарь</span></a>
@@ -32,13 +32,13 @@
 					</li>
 				</ul>
 				<div class="navbar_end flex flex-center-y">
-					<a href="https://www.fortrade.com/aff/143636/fortradeccpayments/" target="_blank" class="navbar_end_btn navbar_end_btn_desktop">
+					<a href="https://www.fortrade.com/ru/?B=5735&A=143636&mtId=5735" target="_blank" class="navbar_end_btn navbar_end_btn_desktop" data-popup="open">
 						<span>Активировать</span>
-						<span>Премиум пакет</span>
+						<span>торговый счет</span>
 					</a>
 					<a href="https://www.fortrade.com/aff/143636/fortradeccpayments/" target="_blank" class="navbar_end_btn navbar_end_btn_mobile">
 						<span>Активировать</span>
-						<span>Премиум пакет</span>
+						<span>торговый счет</span>
 					</a>
 				</div>
 			</div>
