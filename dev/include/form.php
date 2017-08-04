@@ -1,23 +1,23 @@
 <form action="https://api.affbank.net/servFortradeAff.php" class="contact_form clr content_inner flex" method="post" id="contact_form">
-	<input name="Campaign" type="hidden" value="sigfxpro.com" data-component="form-input">
-	<input name="brokerId" type="hidden" value="32" data-component="form-input">
-	<input name="source" type="hidden" value="1" data-component="form-input">
-	<input name="affiliate" type="hidden" value="1" data-component="form-input">
-	<input name="ip" id="ip" type="hidden" value="<?= $_SERVER['REMOTE_ADDR']; ?>" data-component="form-input">
+	<input name="Campaign" type="hidden" required value="sigfxpro.com" data-component="form-input">
+	<input name="brokerId" type="hidden" required value="32" data-component="form-input">
+	<input name="source" type="hidden" required value="1" data-component="form-input">
+	<input name="affiliate" type="hidden" required value="1" data-component="form-input">
+	<input name="ip" id="ip" type="hidden" required value="<?= $_SERVER['REMOTE_ADDR']; ?>" data-component="form-input">
 
 	<div class="waiting_block"></div>
 	<div class="block_main_title">Заполните форму</div>
 	<div class="input_group">
-		<input type="text" placeholder="Имя" class="required" name="first_name" data-component="form-input">
+		<input type="text" placeholder="Имя" required class="required" name="first_name" data-component="form-input">
 	</div>
 	<div class="input_group">
-		<input type="text" placeholder="Фамилия" class="required" name="last_name" data-component="form-input">
+		<input type="text" placeholder="Фамилия" required class="required" name="last_name" data-component="form-input">
 	</div>
 	<div class="input_group input_email">
-		<input type="email" placeholder="Email" class="required" name="email" data-component="form-input">
+		<input type="email" placeholder="Email" required class="required" name="email" data-component="form-input">
 	</div>
 	<div class="input_group">
-		<select class="required" name="codeNum" placeholder="Код страны" data-component="form-input">
+		<select class="required" name="codeNum" placeholder="Код страны" required data-component="form-input">
 			<option value='93'>93 (Afghanistan)</option>
 			<option value='355'>355 (Albania)</option>
 			<option value='213'>213 (Algeria)</option>
@@ -257,7 +257,11 @@
 		</select>
 	</div>
 	<div class="input_group">
-		<input type="text" placeholder="Телефон" class="required" name="phonenum" data-component="form-input">
+		<input type="tel" placeholder="Телефон" id="formInputTel" required class="required" name="phonenum" data-component="form-input" pattern="[0-9]*">
+		<script>
+			var inputTel = document.querySelector('#formInputTel');
+			inputTel.setCustomValidity('В этом поле введенными данными могут быть только цифры');
+		</script>
 	</div>
 	<div class="input_group input_submit">
 		<button type="submit" class="submit"><span>Отправить</span></button>

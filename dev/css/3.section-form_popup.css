@@ -62,6 +62,7 @@
 
 .form_popup input[type="text"],
 .form_popup input[type="email"],
+.form_popup input[type="tel"],
 .form_popup textarea,
 .form_popup select {
 	width: 100%;
@@ -78,6 +79,7 @@
 
 .form_popup input[type="text"]:focus,
 .form_popup input[type="email"]:focus,
+.form_popup input[type="tel"]:focus,
 .form_popup textarea:focus,
 .form_popup select:focus {
 	border-color: #1f90fd;
