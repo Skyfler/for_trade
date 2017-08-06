@@ -257,11 +257,9 @@
 		</select>
 	</div>
 	<div class="input_group">
-		<input type="tel" placeholder="Телефон" id="formInputTel" required class="required" name="phonenum" data-component="form-input" pattern="[0-9]*">
-		<script>
-			var inputTel = document.querySelector('#formInputTel');
-			inputTel.setCustomValidity('В этом поле введенными данными могут быть только цифры');
-		</script>
+		<input type="tel" placeholder="Телефон" id="formInputTel" required class="required" name="phonenum" data-component="form-input" pattern="[0-9]*"
+		oninvalid="setCustomValidity('В этом поле введенными данными могут быть только цифры')"
+		oninput="setCustomValidity('')">
 	</div>
 	<div class="input_group input_submit">
 		<button type="submit" class="submit"><span>Отправить</span></button>

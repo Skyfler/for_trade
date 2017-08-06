@@ -17,7 +17,7 @@
 		</div>
 		<div class="block">
 			<div class="block_inner">
-				<iframe id="market_trends_widget" src="https://trading4pro.com/market-trends/?symbols=EURUSD,USDJPY,GBPUSD,XAUUSD,AUDUSD" frameborder="0" height="552" width="306"></iframe>
+				<iframe id="market_trends_widget" src="https://trading4pro.com/market-trends/?symbols=EURUSD,GBPUSD,AUDUSD,NZDUSD,USDCAD,USDCHF,USDJPY,EURJPY,CADCHF,EURRUB,XAUUSD,XAGUSD" frameborder="0" height="552" width="306"></iframe>
 			</div>
 		</div>
 		<div class="block">

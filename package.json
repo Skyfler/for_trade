@@ -1,5 +1,5 @@
 {
-  "name": "UITSchool",
+  "name": "SIGFXPRO",
   "version": "1.0.0",
   "description": "npm i               - installation of packages\r     gulp                - running standard gulp task to build JS, HTML, CSS and image files  \r     gulp webserver      - open server for viewing the build",
   "main": "gulpfile.js",

@@ -38,7 +38,7 @@
 					</a>
 					<a href="https://www.fortrade.com/aff/143636/fortradeccpayments/" target="_blank" class="navbar_end_btn navbar_end_btn_mobile">
 						<span>Активировать</span>
-						<span>торговый счет</span>
+						<span>премиум пакет</span>
 					</a>
 				</div>
 			</div>
