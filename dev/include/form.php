@@ -1,4 +1,5 @@
 <form action="https://api.affbank.net/servFortradeAff.php" class="contact_form clr content_inner flex" method="post" id="contact_form">
+	<button class="close" data-popup="close"></button>
 	<input name="Campaign" type="hidden" required value="sigfxpro.com" data-component="form-input">
 	<input name="brokerId" type="hidden" required value="32" data-component="form-input">
 	<input name="source" type="hidden" required value="1" data-component="form-input">
@@ -261,8 +262,10 @@
 		oninvalid="setCustomValidity('В этом поле введенными данными могут быть только цифры')"
 		oninput="setCustomValidity('')">
 	</div>
-	<div class="input_group input_submit">
-		<button type="submit" class="submit"><span>Отправить</span></button>
+	<div class="input_group info_group">
+		Нажимая кнопку “ОТПРАВИТЬ” Вы подтверждаете , что согласны с <a href="#">правилами и условиями</a> Sigfxpro.com
 	</div>
-	<button class="close" data-popup="close"></button>
+	<div class="input_group input_submit">
+		<button type="submit" class="submit" onclick="fbq('track', 'CompleteRegistration')"><span>Отправить</span></button>
+	</div>
 </form>

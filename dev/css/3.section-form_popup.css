@@ -4,7 +4,7 @@
 	width: 100%;
 	top: 0;
 	left: 0;
-	background: rgba(255,255,255,.4);
+	background: rgba(0, 0, 0, 0.5);
 	z-index: 1000;
 	display: none;
 }
@@ -15,11 +15,11 @@
 }
 
 .form_popup .contact_form {
-	max-width: 750px;
-	padding: 35px 10px;
+	max-width: 400px;
 	position: relative;
 	background: #fff;
-	border: 2px solid #000;
+	padding: 45px 25px 45px;
+	border-bottom: 3px solid #1f8ffd;
 	max-height: 100%;
 	overflow: auto;
 	text-align: center;
@@ -45,19 +45,26 @@
 	font-weight: 700;
 	color: #2e3346;
 	text-transform: uppercase;
-	font-size: 20px;
-	margin-bottom: 40px;
+	font-size: 24px;
+	margin-bottom: 30px;
 	width: 100%;
 }
 
 .form_popup .input_group {
 	width: 100%;
-	padding: 0 12px;
+	padding: 0px 15px;
 	float: left;
-	margin-bottom: 25px;
+	margin-bottom: 16px;
 }
 .form_popup .input_group:last-child {
 	margin-bottom: 0;
+	margin-top: 30px;
+}
+.form_popup .info_group {
+	font-size: 14px;
+	color: #333333;
+	text-align: left;
+	margin-top: 10px;
 }
 
 .form_popup input[type="text"],
@@ -67,14 +74,15 @@
 .form_popup select {
 	width: 100%;
 	resize: none;
-	font-size: 16px;
+	font-size: 18px;
 	line-height: 1;
-	border: 1px solid #dededf;
 	background: none;
 	color: #2e3346;
-	padding: 13px 10px;
 	overflow: hidden;
 	position: relative;
+	padding: 9px 0px;
+	border: none;
+	border-bottom: 1px solid #dcdcdc;
 }
 
 .form_popup input[type="text"]:focus,
@@ -85,9 +93,9 @@
 	border-color: #1f90fd;
 }
 
-.form_popup input::placeholder {opacity: 1;}
-.form_popup textarea::placeholder {opacity: 1;}
-.form_popup select::placeholder {opacity: 1;}
+.form_popup input::placeholder {opacity: 1; color: #999999;}
+.form_popup textarea::placeholder {opacity: 1; color: #999999;}
+.form_popup select::placeholder {opacity: 1; color: #999999;}
 
 .form_popup .submit {
 	padding: 15px 0;
@@ -97,12 +105,13 @@
 	font-weight: 400;
 	color: #fff;
 	width: 100%;
-	max-width: 210px;
+	max-width: 165px;
 	text-align: center;
-	font-size: 16px;
+	font-size: 18px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	position: relative;
 	border: none;
+	letter-spacing: 0.06em;
 }
 
 .form_popup .submit:before {
@@ -127,23 +136,23 @@
 .form_popup .close {
 	display: block;
 	position: absolute;
-	width: 30px;
-	height: 30px;
+	width: 20px;
+	height: 20px;
 	background: none;
 	border: none;
-	right: 15px;
-	top: 15px;
+	right: 10px;
+	top: 10px;
 }
 
 .form_popup .close:before,
 .form_popup .close:after {
 	content: "";
 	width: 100%;
-	border-bottom: 4px solid #1f8ffd;
+	border-bottom: 2px solid #1f8ffd;
 	display: block;
 	position: absolute;
 	left: 0;
-	top: 13px;
+	top: calc(50% - 1px);
 	transform-origin: center center;
 	transform: rotate(45deg);
 }
@@ -153,6 +162,7 @@
 
 @media screen and (min-width: 768px) {
 
+/*
 	.form_popup .input_group {
 		width: 50%;
 	}
@@ -160,6 +170,7 @@
 	.form_popup .input_group.input_email {
 		width: 100%;
 	}
+*/
 
 }
 
