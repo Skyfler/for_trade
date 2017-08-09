@@ -39,7 +39,7 @@ FormValidator.prototype._checkPhoneNum = function() {
 	var fullNum = codeNum + formInputTel;
 	var apiKey = '369cf28d46cc04fb6b3219b039c7c58f';
 
-	_ajax.ajax('get', 'http://apilayer.net/api/validate?access_key=' + apiKey + '&number=' + fullNum, this._onReqEnd.bind(this));
+	_ajax.ajax('get', 'https://apilayer.net/api/validate?access_key=' + apiKey + '&number=' + fullNum, this._onReqEnd.bind(this));
 };
 
 FormValidator.prototype._onReqEnd = function(xhr) {
