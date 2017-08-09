@@ -9,6 +9,7 @@
 	var ChartWidget = require('./chartWidget');
 	var Slider = require('./slider');
 //	var ContactFormController = require('./contactFormController');
+	var FormValidator = require('./formValidator');
 	var Popup = require('./popup');
 
 	_polyfills.init();
@@ -37,7 +38,8 @@
 		var analyticsPage = document.documentElement.classList.contains('page-analytics');
 		var chartWidget = new ChartWidget({
 			elem: chartWidgetElem,
-			breakPonit: analyticsPage ? 0 : 768
+			breakPonit: analyticsPage ? 0 : 768,
+			maxHeight: 750
 		});
 	}
 
@@ -58,6 +60,13 @@
 //			method: contactFormElem.method
 //		});
 //	}
+
+	var contactFormElem = document.querySelector('#contact_form');
+	if (contactFormElem) {
+		var contactForm = new FormValidator({
+			elem: contactFormElem
+		});
+	}
 
 	var formPopupElem = document.querySelector('.form_popup');
 	if (formPopupElem) {

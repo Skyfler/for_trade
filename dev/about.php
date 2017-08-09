@@ -23,18 +23,15 @@
 				<li>Экономический календарь</li>
 				<li>Инструменты: Форекс, металлы, CFD-контракты</li>
 				<li>Графики в режиме реального времени с инструментами для теханализа</li>
-				<li> Бонусные программы от брокеров  в бегущей ленте и другие актуальные новости</li>
+				<li>Бонусные программы от брокеров  в бегущей ленте и другие актуальные новости</li>
 			</ul>
 <!--			<p>Etiam pharetra, erat sed fermentum feugiat per inceptos himenaeos.</p>-->
 		</div>
-<!--
 		<div class="block">
-			<p class="title">ForTrade</p>
-			<p class="sub_title">Lorem ipsum</p>
-			<p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-			<p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo.</p>
+			<p class="title">Наши контакты</p>
+			<p class="sub_title">Email</p>
+			<p><a href="mailto:info@sigfxpro.com">info@sigfxpro.com</a></p>
 		</div>
--->
 	</section>
 	<?php require('include/banner.php'); ?>
 	<?php require('include/form_popup.php'); ?>

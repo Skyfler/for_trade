@@ -64,7 +64,12 @@ ContactFormController.prototype._onReqEnd = function(xhr) {
 //			'<p>Пожалуйста, повторите попытку позже.</p>'
 //		});
 
-		console.log(xhr.responseText);
+		console.log({
+			e: this.NAME + ': _onReqEnd',
+			status: xhr.status,
+			xhr: xhr,
+			res: xhr.responseText
+		});
 	}
 };
 

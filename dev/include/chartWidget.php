@@ -8,5 +8,5 @@
 	@file_get_contents("https://trading4pro.com:8010/?token=$secretToken&key=$userToken");
 ?>
 <div>
-	<div id="t4p-chart-widget" data-w="400" data-h="552" data-key="<?=$userToken ?>"></div>
+	<div id="t4p-chart-widget" data-w="400" data-h="749" data-key="<?=$userToken ?>"></div>
 </div>

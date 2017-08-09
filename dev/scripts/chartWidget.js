@@ -11,6 +11,7 @@ function ChartWidget(options) {
 	Helper.call(this, options);
 
 	this._elem = options.elem;
+	this._maxheight = options.maxHeight || 750;
 	this._breakPonit = options.breakPonit !== undefined ? options.breakPonit : 768;
 
 	this._onResize = this._onResize.bind(this);
@@ -40,13 +41,19 @@ ChartWidget.prototype._widgetInitScript = function() {
 };
 
 ChartWidget.prototype._onResize = function() {
-	if (this._width === this._elem.parentElement.offsetWidth) {
+	var height = window.innerHeight - 30;
+	if (height > this._maxheight) {
+		height = this._maxheight;
+	}
+
+	if (this._width === this._elem.parentElement.offsetWidth && this._elem.dataset.h === height) {
 		return;
 	}
 
 	this._width = this._elem.parentElement.offsetWidth;
 
 	this._elem.setAttribute('data-w', this._width);
+	this._elem.setAttribute('data-h', height);
 	this._elem.innerHTML = '';
 
 	if (window.trading4proWidget) {
