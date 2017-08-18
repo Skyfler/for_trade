@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="ru" class="page-calendar">
 <head>
@@ -32,7 +33,8 @@
 		</div>
 	</section>
 	<?php require('include/banner.php'); ?>
-	<?php require('include/form_popup.php'); ?>
+	<?php require('include/registrationForm_popup.php'); ?>
+	<?php require('include/autoRegistration_popup.php'); ?>
 	<?php require('include/footer.php'); ?>
 </body>
 </html>

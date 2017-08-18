@@ -1,5 +1,6 @@
-<form action="https://api.affbank.net/servFortradeAff.php" class="contact_form clr content_inner flex" method="post" id="contact_form">
-	<button class="close" data-popup="close"></button>
+<form action="https://api.affbank.net/servFortradeAff.php" class="contact_form clr content_inner flex" method="post" id="<?= $formId; ?>">
+	<button class="close" data-popup-action="close" data-popup-target="<?= $popupTarget; ?>"></button>
+	<img src="img/logo.png" alt="SIXPRO" class="responsive_img logo">
 	<input name="Campaign" type="hidden" required value="sigfxpro.com" data-component="form-input">
 	<input name="brokerId" type="hidden" required value="32" data-component="form-input">
 	<input name="source" type="hidden" required value="1" data-component="form-input">
@@ -7,7 +8,7 @@
 	<input name="ip" id="ip" type="hidden" required value="<?= $_SERVER['REMOTE_ADDR']; ?>" data-component="form-input">
 
 	<div class="waiting_block"></div>
-	<div class="block_main_title">Заполните форму</div>
+	<div class="block_main_title"><?= $formTitle; ?></div>
 	<div class="input_group">
 		<input type="text" placeholder="Имя" required class="required" name="first_name" data-component="form-input">
 	</div>
@@ -19,12 +20,11 @@
 	</div>
 	<div class="input_group">
 		<?php
-			session_start();
 			if (!isset($_SESSION['ip']) || $_SESSION['ip'] !== $_SERVER['REMOTE_ADDR'] || !isset($_SESSION['country'])) {
 				$_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
 //				echo 'file_get_contents(' . "https://ipinfo.io/{$_SESSION['ip']}" . ')<br>';
 //				$details = json_decode(file_get_contents("https://ipinfo.io/{$_SESSION['ip']}"));
-				$_SESSION['country'] = $details->country;
+//				$_SESSION['country'] = $details->country;
 
 				$curl = curl_init();
 
@@ -49,10 +49,16 @@
 				curl_close($curl);
 
 				if ($err) {
-//				  echo "cURL Error #:" . $err;
+//				  	echo "cURL Error #:" . $err;
 				} else {
-//				  echo $response;
-					$_SESSION['country'] = json_decode($response)->country;
+//					var_dump(json_decode($response));
+//					echo '<br>';
+					$resObj = json_decode($response);
+					if (isset($resObj->country)) {
+						$_SESSION['country'] = $resObj->country;
+					} else {
+						$_SESSION['country'] = false;
+					}
 				}
 
 			}
@@ -310,7 +316,10 @@
 		<button type="submit" class="submit" onclick="this.form.formInputTel.setCustomValidity('');"><span>Отправить</span></button>
 	</div>
 	<div class="input_group info_group">
-		Нажимая кнопку “ОТПРАВИТЬ” Вы подтверждаете , что согласны с правилами и условиями<a href="#"></a> пользования сайтом Sigfxpro.com
+		<div class="terms_info">Нажимая кнопку “ОТПРАВИТЬ” Вы подтверждаете , что согласны с правилами и условиями<!--<a href="#"></a>--> пользования сайтом Sigfxpro.com</div>
+	</div>
+	<div class="input_group info_group">
+		<div class="instruction_info">Рекомендуем ознакомиться с <a href="instruction">инструкцией</a>.</div>
 	</div>
 </form>
 <script>

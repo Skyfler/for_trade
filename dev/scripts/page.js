@@ -11,6 +11,8 @@
 //	var ContactFormController = require('./contactFormController');
 	var FormValidator = require('./formValidator');
 	var Popup = require('./popup');
+	var SimpleTabs = require('./simpleTabs');
+	var AutoPopupController = require('./autoPopupController');
 
 	_polyfills.init();
 	_extendStandartPrototypes.init();
@@ -68,12 +70,35 @@
 		});
 	}
 
-	var formPopupElem = document.querySelector('.form_popup');
-	if (formPopupElem) {
-		var popup = new Popup({
-			elem: formPopupElem,
-			popupOpenBtnSelector: '[data-popup="open"]',
-			popupCloseBtnSelector: '[data-popup="close"]'
+	var tabsElem = document.querySelector('.tabs');
+	if (tabsElem) {
+		var tabs = new SimpleTabs({
+			elem: tabsElem
+		});
+	}
+
+	var registrationFormPopupElem = document.querySelector('#registration_form_popup');
+	if (registrationFormPopupElem) {
+		var registrationFormPopup = new Popup({
+			elem: registrationFormPopupElem,
+			popupOpenBtnSelector: '[data-popup-action="open"]',
+			popupCloseBtnSelector: '[data-popup-action="close"]'
+		});
+	}
+
+	var autoRegistrationFormPopupElem = document.querySelector('#auto_registration_form_popup');
+	if (autoRegistrationFormPopupElem) {
+		var autoRegistrationFormPopup = new Popup({
+			elem: autoRegistrationFormPopupElem,
+			popupOpenBtnSelector: '[data-popup-action="open"]',
+			popupCloseBtnSelector: '[data-popup-action="close"]'
+		});
+
+		var autoPopupController = new AutoPopupController({
+			elem: autoRegistrationFormPopupElem,
+			tabsElem: tabsElem || false,
+			delayMobile: 180000,
+			delayDesktop: 60000
 		});
 	}
 

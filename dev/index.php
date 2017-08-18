@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="ru" class="page-index">
 <head>
@@ -39,17 +40,17 @@
 			<div class="overflow_hidden_container">
 				<div class="overflow_block clr flex flex-center-v">
 					<div class="slider_slide" data-component="slide">
-						<a href="https://www.fortrade.com/ru/?B=5735&A=143636&mtId=5735" target="_blank" data-popup="open">
+						<a href="https://www.fortrade.com/ru/?B=5735&A=143636&mtId=5735" target="_blank" data-popup-action="open" data-popup-target="registration_form_popup">
 							<img src="img/RU_Trade-Online_picture_970x250%20frame_0.png" alt="" class="responsive_img">
 						</a>
 					</div>
 					<div class="slider_slide" data-component="slide">
-						<a href="https://www.fortrade.com/ru/?B=5735&A=143636&mtId=5735" target="_blank" data-popup="open">
+						<a href="https://www.fortrade.com/ru/?B=5735&A=143636&mtId=5735" target="_blank" data-popup-action="open" data-popup-target="registration_form_popup">
 							<img src="img/RU_Trade-Online_picture_970x250%20frame_1.png" alt="" class="responsive_img">
 						</a>
 					</div>
 					<div class="slider_slide" data-component="slide">
-						<a href="https://www.fortrade.com/ru/?B=5735&A=143636&mtId=5735" target="_blank" data-popup="open">
+						<a href="https://www.fortrade.com/ru/?B=5735&A=143636&mtId=5735" target="_blank" data-popup-action="open" data-popup-target="registration_form_popup">
 							<img src="img/RU_Trade-Online_picture_970x250%20frame_2.png" alt="" class="responsive_img">
 						</a>
 					</div>
@@ -89,7 +90,8 @@
 			</div>
 		</div>
 	</section>
-	<?php require('include/form_popup.php'); ?>
+	<?php require('include/registrationForm_popup.php'); ?>
+	<?php require('include/autoRegistration_popup.php'); ?>
 	<?php require('include/footer.php'); ?>
 </body>
 </html>

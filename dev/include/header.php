@@ -32,7 +32,7 @@
 					</li>
 				</ul>
 				<div class="navbar_end flex flex-center-y">
-					<a href="https://www.fortrade.com/ru/?B=5735&A=143636&mtId=5735" target="_blank" class="navbar_end_btn navbar_end_btn_desktop" data-popup="open">
+					<a href="https://www.fortrade.com/ru/?B=5735&A=143636&mtId=5735" target="_blank" class="navbar_end_btn navbar_end_btn_desktop" data-popup-action="open" data-popup-target="registration_form_popup">
 						<span>Активировать</span>
 						<span>торговый счет</span>
 					</a>
