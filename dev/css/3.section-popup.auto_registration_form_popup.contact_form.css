@@ -9,7 +9,7 @@
 	max-width: 400px;
 	padding: 0 35px;
 	width: 100%;
-	text-align: center;
+	text-align: right;
 }
 
 .popup#auto_registration_form_popup .do_not_show label {
@@ -18,7 +18,7 @@
 	position: relative;
 	font-size: 14px;
 	color: #333;
-	padding-left: 26px;
+	padding-right: 26px;
 }
 
 .popup#auto_registration_form_popup .do_not_show input[type="checkbox"]:not(checked) {
@@ -31,7 +31,7 @@
 .popup#auto_registration_form_popup .do_not_show input[type="checkbox"]+label:before {
 	content: "";
 	position: absolute;
-	left: 0;
+	right: 0;
 	top: 1px;
 	display: block;
 	width: 15px;
@@ -44,7 +44,7 @@
 .popup#auto_registration_form_popup .do_not_show input[type="checkbox"]+label:after {
 	content: "";
 	position: absolute;
-	left: 1px;
+	right: 1px;
 	top: 4px;
 	display: block;
 	width: 12px;

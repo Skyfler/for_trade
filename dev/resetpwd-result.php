@@ -1,12 +1,6 @@
 <?php
 require_once("php_scripts/membersite_config.php");
 
-if($fgmembersite->ResetPassword())
-{
-	$fgmembersite->RedirectToURL('resetpwd-result');
-	exit;
-}
-
 if(!$fgmembersite->CheckLogin())
 {
 	  $value = 'false';
@@ -30,10 +24,8 @@ setcookie("DoNotShowRegistrationPopup", $value);
 	?>
 	<section class="password_reset">
 		<div class="text_block container">
-			<p class="title">Ошибка</p>
-			<?php for ($i = 0, $errors = $fgmembersite->GetErrorMessageArr(), $length = count($errors); $i < $length; $i++) { ?>
-				<p><?= $errors[$i]->error; ?></p>
-			<?php } ?>
+			<p class="title">Пароль успешно сброшен</p>
+			<p>Ваш новый пароль выслан вам на почту.</p>
 		</div>
 	</section>
 	<?php

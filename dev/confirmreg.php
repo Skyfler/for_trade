@@ -3,13 +3,13 @@ require_once("php_scripts/membersite_config.php");
 
 if(isset($_GET['code']))
 {
-    if($fgmembersite->ConfirmUser())
-    {
-        $fgmembersite->RedirectToURL('//' . $fgmembersite->sitename);
-        // echo json_encode($fgmembersite->GenerateResponceObj(true));
-    } else {
-        // echo json_encode($fgmembersite->GenerateResponceObj(false));
-    }
+	if($fgmembersite->ConfirmUser())
+	{
+		$fgmembersite->RedirectToURL('/');
+		// echo json_encode($fgmembersite->GenerateResponceObj(true));
+	} else {
+		// echo json_encode($fgmembersite->GenerateResponceObj(false));
+	}
 }
 
 ?>
@@ -27,17 +27,17 @@ if(isset($_GET['code']))
 	?>
 	<section class="registration_confirmation">
 		<div class="text_block container flex flex-center-x">
-		    <form action="<?php echo $fgmembersite->GetSelfScript(); ?>" class="contact_form" method="get">
-            	<div class="form_inner_container clr flex">
-            		<div class="block_main_title">Введите код подтверждения</div>
-            		<div class="input_group">
-            			<input type="text" placeholder="Код подтверждения" name="code" required class="required" id="code" maxlength="50" data-component="form-input">
-            		</div>
-            		<div class="input_group input_submit">
-            			<button type="submit" class="submit"><span>Подтвердить</span></button>
-            		</div>
-            	</div>
-            </form>
+			<form action="<?php echo $fgmembersite->GetSelfScript(); ?>" class="contact_form" method="get">
+				<div class="form_inner_container clr flex">
+					<div class="block_main_title">Введите код подтверждения</div>
+					<div class="input_group">
+						<input type="text" placeholder="Код подтверждения" name="code" required class="required" id="code" maxlength="50" data-component="form-input">
+					</div>
+					<div class="input_group input_submit">
+						<button type="submit" class="submit"><span>Подтвердить</span></button>
+					</div>
+				</div>
+			</form>
 		</div>
 	</section>
 	<?php
