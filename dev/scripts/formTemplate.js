@@ -14,6 +14,7 @@ function FormTemplate(options) {
 	this._method = options.method || 'GET';
 
 	this._onFocus = this._onFocus.bind(this);
+	this._onInput = this._onInput.bind(this);
 
 	this._initCustomElements();
 }
@@ -162,25 +163,41 @@ FormTemplate.prototype._getUserInputValues = function() {
 };
 
 FormTemplate.prototype._validateField = function(input, value) {
-	if (
-		input.classList.contains('required') &&
-		(value === '' ||
-			(input.matches('input[type="email"]') && !this._isValidEmailAddress(value))
-		)
-	) {
-		input.classList.add('error');
+	var valid = true;
 
-		this._addListener(input, 'focus', this._onFocus, true);
-		return false;
+	if (input.classList.contains('required') && value === '') {
+		this._markAsError(input);
+		valid = false;
+	} else if (value !== '' && input.matches('input[type="email"]') && !this._isValidEmailAddress(value)) {
+		this._markAsError(input, 'Введите валидный электронный адрес.');
+		valid = false;
 	}
 
-	return true;
+	return valid;
+};
+
+FormTemplate.prototype._markAsError = function(input, message) {
+	message = message ? message : 'Это обязательное поле.';
+	input.classList.add('error');
+	input.setCustomValidity(message);
+
+	this._addListener(input, 'focus', this._onFocus, true);
+	this._addListener(input, 'change', this._onInput);
+	this._addListener(input, 'input', this._onInput);
 };
 
 FormTemplate.prototype._onFocus = function(e) {
 	var currentTarget = e.currentTarget;
 	this._removeListener(currentTarget, 'focus', this._onFocus, true);
 	currentTarget.classList.remove('error');
+};
+
+FormTemplate.prototype._onInput = function(e) {
+	var currentTarget = e.currentTarget;
+	currentTarget.setCustomValidity('');
+
+	this._removeListener(currentTarget, 'change', this._onInput);
+	this._removeListener(currentTarget, 'input', this._onInput);
 };
 
 FormTemplate.prototype._isValidEmailAddress = function(emailAddress) {

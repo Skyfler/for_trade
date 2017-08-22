@@ -1,0 +1,44 @@
+.password_reset {
+	padding: 60px 0 60px;
+}
+
+.password_reset p {
+	font-weight: 300;
+	font-size: 20px;
+}
+.password_reset p.title {
+	font-weight: 700;
+	font-size: 26px;
+}
+.password_reset p + p {
+	margin-top: 18px;
+}
+
+@media screen and (min-width: 992px) {
+
+	.password_reset p {
+		font-size: 25px;
+	}
+	.password_reset p.title {
+		font-size: 31px;
+	}
+	.password_reset p + p {
+		margin-top: 22px;
+	}
+
+}
+
+@media screen and (min-width: 1200px) {
+
+	.password_reset p {
+		font-size: 30px;
+	}
+	.password_reset p.title {
+		font-size: 36px;
+
+	}
+	.password_reset p + p {
+		margin-top: 28px;
+	}
+
+}

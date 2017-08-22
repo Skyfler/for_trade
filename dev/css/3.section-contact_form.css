@@ -1,11 +1,9 @@
 .contact_form {
 	max-width: 400px;
 	position: relative;
-	background: rgba(255, 255, 255, 0.95);
-	padding: 45px 25px 45px;
-	border-bottom: 3px solid #1f8ffd;
+	background: rgba(255, 255, 255, 0.9);
 	max-height: 100%;
-	overflow: auto;
+	/*overflow: auto;*/
 	text-align: center;
 }
 
@@ -25,6 +23,14 @@
 	display: block;
 }
 
+.contact_form .form_inner_container {
+	max-height: 100vh;
+	overflow: auto;
+	position: relative;
+	padding: 45px 25px 45px;
+	border-bottom: 3px solid #1f8ffd;
+}
+
 .contact_form .block_main_title {
 	font-weight: 700;
 	color: #2e3346;
@@ -38,6 +44,12 @@
 	max-width: 150px;
 	position: relative;
 	top: -24px;
+}
+
+.contact_form .spmhidip {
+	display:none;
+	width:10px;
+	height:3px;
 }
 
 .contact_form .input_group {
@@ -59,11 +71,11 @@
 }
 
 .contact_form .input_group.info_group .terms_info {
-	font-size: 12px;
+	font-size: 11px;
 }
 
 .contact_form .input_group.info_group .instruction_info {
-	font-size: 18px;
+	font-size: 15px;
 }
 
 .contact_form .input_group.info_group .instruction_info a {
@@ -90,6 +102,9 @@
 	padding: 9px 0px;
 	border: none;
 	border-bottom: 1px solid #dcdcdc;
+}
+.contact_form select {
+	padding: 8px 0px;
 }
 
 .contact_form input[type="text"]:focus,

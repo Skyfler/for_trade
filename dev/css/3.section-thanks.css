@@ -1,0 +1,44 @@
+.thanks {
+	padding: 60px 0 60px;
+}
+
+.thanks p {
+	font-weight: 300;
+	font-size: 20px;
+}
+.thanks p.title {
+	font-weight: 700;
+	font-size: 26px;
+}
+.thanks p + p {
+	margin-top: 18px;
+}
+
+@media screen and (min-width: 992px) {
+
+	.thanks p {
+		font-size: 25px;
+	}
+	.thanks p.title {
+		font-size: 31px;
+	}
+	.thanks p + p {
+		margin-top: 22px;
+	}
+
+}
+
+@media screen and (min-width: 1200px) {
+
+	.thanks p {
+		font-size: 30px;
+	}
+	.thanks p.title {
+		font-size: 36px;
+
+	}
+	.thanks p + p {
+		margin-top: 28px;
+	}
+
+}

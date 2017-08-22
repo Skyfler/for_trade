@@ -30,6 +30,9 @@
 						require('forgotPasswordForm.php');
 					?>
 				</div>
+				<div class="do_not_show">
+					<input type="checkbox" name="" class="do_not_show_input" id="do_not_show"><label for="do_not_show" class="do_not_show_label">Больше не показывать</label>
+				</div>
 			</div>
 		</div>
 	</div>

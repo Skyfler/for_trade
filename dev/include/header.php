@@ -40,6 +40,14 @@
 						<span>Активировать</span>
 						<span>премиум пакет</span>
 					</a>
+					<?php if ($fgmembersite->CheckLogin()) { ?>
+						<form id="logout_form" method="POST" action="logout.php">
+							<input type="hidden" name="logout" value="1" data-component="form-input">
+							<button type="submit" class="logout">Выйти</button>
+						</form>
+					<?php } else { ?>
+						<button class="login" id="header_login_btn" data-popup-action="open" data-popup-target="auto_registration_form_popup">Войти</button>
+					<?php } ?>
 				</div>
 			</div>
 		</div>

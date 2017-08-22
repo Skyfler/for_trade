@@ -14,6 +14,7 @@ function AutoPopupController(options) {
 	this._tabsElem = options.tabsElem;
 	this._delayMobile = options.delayMobile || 300000;
 	this._delayDesktop = options.delayDesktop || 300000;
+	this._doNotShowCheckElem = options.doNotShowCheckElem;
 
 	this._onPopupOpen = this._onPopupOpen.bind(this);
 	this._onPopupClosed = this._onPopupClosed.bind(this);
@@ -27,7 +28,7 @@ AutoPopupController.prototype.constructor = AutoPopupController;
 AutoPopupController.prototype._init = function() {
 	this._openPopups = [];
 
-	if (this._checkScreenWidth() === 'xs') {
+	if (this._checkScreenWidth() === 'xs' && document.documentElement.classList.contains('page-index')) {
 		this._autoOpenPopup();
 	} else {
 		this._startTimer();
@@ -38,6 +39,8 @@ AutoPopupController.prototype._init = function() {
 };
 
 AutoPopupController.prototype._startTimer = function() {
+	if (document.cookie.search('DoNotShowRegistrationPopup=true') !== -1 || this._doNotShowCheckElem.checked) return;
+
 	if (this._timer) {
 		clearTimeout(this._timer);
 	}
@@ -61,6 +64,11 @@ AutoPopupController.prototype._startTimer = function() {
 AutoPopupController.prototype._onPopupOpen = function(e) {
 	var popupElem = e.detail.popupElem;
 	if (!popupElem) return;
+
+	if (popupElem === this._elem && this._timer) {
+		clearTimeout(this._timer);
+		delete this._timer;
+	}
 
 	var index = this._openPopups.indexOf(popupElem);
 	if (index === -1) {

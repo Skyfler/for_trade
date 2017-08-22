@@ -1,3 +1,65 @@
-.popup#auto_registration_form_popup .contact_form {
+.popup#auto_registration_form_popup .contact_form .form_inner_container {
 	max-height: calc(100vh - 40px);
+}
+
+.popup#auto_registration_form_popup .do_not_show {
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	max-width: 400px;
+	padding: 0 35px;
+	width: 100%;
+	text-align: center;
+}
+
+.popup#auto_registration_form_popup .do_not_show label {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	font-size: 14px;
+	color: #333;
+	padding-left: 26px;
+}
+
+.popup#auto_registration_form_popup .do_not_show input[type="checkbox"]:not(checked) {
+	position: absolute;
+	opacity: 0;
+	height: 0;
+	width: 0;
+}
+
+.popup#auto_registration_form_popup .do_not_show input[type="checkbox"]+label:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 1px;
+	display: block;
+	width: 15px;
+	height: 15px;
+	border: 1px solid #2196f3;
+	background: rgba(255, 255, 255, 0.5);
+	transition: background-color 0.5s ease;
+}
+
+.popup#auto_registration_form_popup .do_not_show input[type="checkbox"]+label:after {
+	content: "";
+	position: absolute;
+	left: 1px;
+	top: 4px;
+	display: block;
+	width: 12px;
+	height: 5px;
+	border-left: 1px solid white;
+	border-bottom: 1px solid white;
+	transform: rotate(-45deg);
+	opacity: 0;
+}
+
+.popup#auto_registration_form_popup .do_not_show input[type="checkbox"]:checked+label:before {
+	border-color: rgba(255,255,255,.5);
+	background-color: #2196f3;
+}
+
+.popup#auto_registration_form_popup .do_not_show input[type="checkbox"]:checked+label:after {
+	opacity: 1;
 }

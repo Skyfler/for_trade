@@ -1,12 +1,18 @@
 "use strict";
 
-var FormTemplate = require('./formTemplate');
-var ModalWindow = require('./modalWindow');
-var _ajax = require('./ajax');
+try {
+	var FormTemplate = require('./formTemplate');
+	var ModalWindow = require('./modalWindow');
+	var _ajax = require('./ajax');
+} catch (err) {
+	console.warn(err);
+}
 
 function ContactFormController(options) {
 	options.name = options.name || 'ContactFormController';
 	FormTemplate.call(this, options);
+
+	this._callback = options.callback;
 
 	this._loadImages('img/spinner.gif');
 
@@ -31,7 +37,10 @@ ContactFormController.prototype._onSubmit = function(e) {
 
 ContactFormController.prototype._postForm = function() {
 	var valuesObj = this._getUserInputValues();
-	if (!valuesObj || valuesObj.__validationFailed) return;
+	if (!valuesObj || valuesObj.__validationFailed) {
+		this._elem.reportValidity();
+		return;
+	}
 
 	var formData = this._createFormData(valuesObj);
 
@@ -56,7 +65,22 @@ ContactFormController.prototype._onReqEnd = function(xhr) {
 	}
 
 	if (xhr.status === 200) {
-		this._sendCustomEvent(this._elem, 'formSubmitted', { bubbles: true });
+		// this._sendCustomEvent(this._elem, 'formSubmitted', { bubbles: true });
+		// console.log({
+		// 	e: this.NAME + ': _onReqEnd success',
+		// 	status: xhr.status,
+		// 	xhr: xhr,
+		// 	res: xhr.responseText,
+		// 	res1: JSON.parse(xhr.responseText)
+		// });
+
+		if (res.success) {
+			if (this._callback) {
+				this._callback();
+			}
+		} else {
+			this._onSetInputsValidationError(res.errors);
+		}
 	} else {
 //		new ModalWindow({
 //			modalClass: 'error_notification',
@@ -64,13 +88,40 @@ ContactFormController.prototype._onReqEnd = function(xhr) {
 //			'<p>Пожалуйста, повторите попытку позже.</p>'
 //		});
 
-		console.log({
-			e: this.NAME + ': _onReqEnd',
-			status: xhr.status,
-			xhr: xhr,
-			res: xhr.responseText
-		});
+		// console.log({
+		// 	e: this.NAME + ': _onReqEnd error',
+		// 	status: xhr.status,
+		// 	xhr: xhr,
+		// 	res: xhr.responseText,
+		// 	res1: JSON.parse(xhr.responseText)
+		// });
+
+
 	}
 };
 
-module.exports = ContactFormController;
+ContactFormController.prototype._onSetInputsValidationError = function(errors) {
+	errors = errors ? errors : [];
+
+	for (var i = 0, input; i < errors.length; i++) {
+		if (errors[i].type === 'input') {
+			input = this._elem.querySelector('[name="' + errors[i].name +'"][data-component="form-input"]');
+			if (input) {
+				this._markAsError(input, errors[i].error);
+			} else {
+				console.warn(this.NAME + ': input with name "' + errors[i].name +'" not found. Error message: ' + errors[i].error);
+			}
+		} else {
+			console.warn(this.NAME + ': AJAX request returned error. Type = "' + errors[i].type +'". Error message: ' + errors[i].error);
+		}
+	}
+
+	this._elem.reportValidity();
+
+};
+
+try {
+	module.exports = ContactFormController;
+} catch (err) {
+	console.warn(err);
+}

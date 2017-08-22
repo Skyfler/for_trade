@@ -59,6 +59,9 @@
 .about ul + p {
 	margin-top: 15px;
 }
+.about ul + p.title {
+	margin-top: 25px;
+}
 
 .about p + ul {
 	margin-top: 15px;
@@ -85,6 +88,23 @@
 	left: 5px;
 	background: #1f8ffd;
 	top: 6px;
+}
+
+.about .dropdown_group {
+	margin-top: 20px;
+}
+
+.about .dropdown_group .droppownGroupItem + .droppownGroupItem {
+	margin-top: 12px;
+}
+
+.about .dropdown_group .droppownGroupItem .navbar_header {
+	text-transform: none;
+	color: #2196f3;
+}
+
+.about .dropdown_group .dropdown_bar {
+	padding: 10px 0;
 }
 
 @media screen and (min-width: 768px) {

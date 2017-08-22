@@ -1,4 +1,16 @@
-<?php session_start(); ?>
+<?php
+require_once("php_scripts/membersite_config.php");
+
+if(!$fgmembersite->CheckLogin())
+{
+	  $value = 'false';
+} else {
+	  $value = 'true';
+}
+
+setcookie("DoNotShowRegistrationPopup", $value);
+?>
+
 <!doctype html>
 <html lang="ru" class="page-instruction">
 <head>
@@ -39,9 +51,13 @@
 			</div>
 		</div>
 	</section>
-	<?php require('include/banner.php'); ?>
-	<?php require('include/registrationForm_popup.php'); ?>
-	<?php require('include/autoRegistration_popup.php'); ?>
+	<?php
+	if (!$fgmembersite->CheckLogin()) {
+		require('include/banner.php');
+		require('include/registrationForm_popup.php');
+		require('include/autoRegistration_popup.php');
+	}
+	?>
 	<?php require('include/footer.php'); ?>
 </body>
 </html>

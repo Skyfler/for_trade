@@ -131,6 +131,30 @@ header .menu .navbar_end .navbar_end_btn span + span {
 	font-size: 11px;
 }
 
+header .menu .navbar_end .logout,
+header .menu .navbar_end .login {
+	border: none;
+    background: none;
+    color: #2196f3;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 10px 0;
+    width: 100%;
+    text-align: left;
+}
+
+header .menu .navbar_end .logout:hover,
+header .menu .navbar_end .login:hover {
+	text-decoration: underline;
+}
+
+header .menu .navbar_end #logout_form,
+header .menu .navbar_end .login {
+	order: -1;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
 @media screen and (min-width: 768px) {
 
 	header .menu .navbar_header {
@@ -154,7 +178,7 @@ header .menu .navbar_end .navbar_end_btn span + span {
 
 }
 
-@media screen and (max-width: 899px) {
+@media screen and (max-width: 991px) {
 
 	header .menu {
 		padding-right: 0 !important;
@@ -169,9 +193,10 @@ header .menu .navbar_end .navbar_end_btn span + span {
 		display: block;
 		text-align: left;
 	}
+
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 992px) {
 
 	header {
 		height: 80px;
@@ -241,6 +266,21 @@ header .menu .navbar_end .navbar_end_btn span + span {
 
 	header .menu .navbar_end .navbar_end_btn {
 		width: 165px;
+	}
+
+	header .menu .navbar_end .logout,
+	header .menu .navbar_end .login {
+	    padding: 10px 10px;
+	    margin-left: 5px;
+	    width: auto;
+	    text-align: center;
+	}
+
+	header .menu .navbar_end #logout_form,
+	header .menu .navbar_end .login {
+		order: 0;
+		width: auto;
+		margin-bottom: 0;
 	}
 
 }

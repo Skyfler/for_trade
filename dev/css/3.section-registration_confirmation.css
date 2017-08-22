@@ -1,0 +1,12 @@
+.registration_confirmation {
+	/*padding: 60px 0 60px;*/
+}
+
+.registration_confirmation .contact_form {
+	background: none;
+}
+
+.registration_confirmation .contact_form .form_inner_container {
+	max-height: none;
+	border-bottom: none;
+}

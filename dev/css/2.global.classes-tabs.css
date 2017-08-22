@@ -9,19 +9,23 @@
 	border-top: 3px solid #666;
 	border-left: 3px solid #666;
 	border-right: 3px solid #666;
-	background: rgba(214, 214, 214, 0.95);
+	background: rgba(214, 214, 214, 0.9);
 	display: inline-block;
 	border-radius: 10px 10px 0 0;
 	position: relative;
 	cursor: pointer;
 }
 .tabs .tab_labels_container .tab_label.selected {
-	background: rgba(255, 255, 255, 0.95);
+	background: rgba(255, 255, 255, 0.9);
 	border-color: #1f8ffd;
 	z-index: 1;
 }
 .tabs .tab_labels_container .tab_label + .tab_label {
 	margin-left: -3px;
+}
+
+.tabs .tab_blocks_container {
+	position: relative;
 }
 
 .tabs .tab_block {
