@@ -34,7 +34,7 @@ setcookie("DoNotShowRegistrationPopup", $value);
 		</div>
 		<div class="info_block">
 			<span class="icon_sqare red"></span> красный цвет означает сильное колебание рынка в следствие выхода данной новости<br>
-			<span class="icon_sqare orange"></span> желтый цвет говорит о том,что  вляние новости на рынок ожидается  умеренным<br>
+			<span class="icon_sqare orange"></span> желтый цвет говорит о том, что  вляние новости на рынок ожидается  умеренным<br>
 			<span class="icon_sqare grey"></span> серый цвет является показателем того, что новость, практически не влияет на цены активов
 		</div>
 		<div class="text_block">

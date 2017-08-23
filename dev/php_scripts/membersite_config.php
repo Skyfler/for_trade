@@ -7,7 +7,7 @@ $fgmembersite = new FGMembersite();
 $fgmembersite->SetWebsiteName('sigfxpro.com');
 
 //Provide the email address where you want to get notifications
-$fgmembersite->SetAdminEmail('kiril@gloryads.net');
+$fgmembersite->SetAdminEmail('accounts@sigfxpro.com');
 
 //Provide your database login details here:
 //hostname, user name, password, database name and table name
@@ -24,4 +24,3 @@ $fgmembersite->InitDB(/*hostname*/'sigfxpro.mysql.ukraine.com.ua',
 $fgmembersite->SetRandomKey('xVs1RmsCNqVX5il');
 
 ?>
-

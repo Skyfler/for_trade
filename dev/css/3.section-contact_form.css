@@ -69,6 +69,12 @@
 .contact_form .input_group.input_submit {
 	margin-top: 30px;
 }
+.contact_form .input_group.input_phone_code {
+	width: 117px;
+}
+.contact_form .input_group.input_phone_num {
+	width: calc(100% - 117px);
+}
 
 .contact_form .input_group.info_group .terms_info {
 	font-size: 11px;
@@ -104,7 +110,8 @@
 	border-bottom: 1px solid #dcdcdc;
 }
 .contact_form select {
-	padding: 8px 0px;
+	padding: 7px 0px;
+	font-family: 'Roboto Mono', monospace;
 }
 
 .contact_form input[type="text"]:focus,

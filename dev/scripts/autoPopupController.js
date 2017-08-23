@@ -39,7 +39,11 @@ AutoPopupController.prototype._init = function() {
 };
 
 AutoPopupController.prototype._startTimer = function() {
-	if (document.cookie.search('DoNotShowRegistrationPopup=true') !== -1 || this._doNotShowCheckElem.checked) return;
+	if (document.cookie.search('DoNotShowRegistrationPopup=true') !== -1 ||
+		this._doNotShowCheckElem.checked ||
+		document.documentElement.classList.contains('page-thanks') ||
+		document.documentElement.classList.contains('page-password_reset') ||
+		document.documentElement.classList.contains('page-reset_link_sent')) return;
 
 	if (this._timer) {
 		clearTimeout(this._timer);

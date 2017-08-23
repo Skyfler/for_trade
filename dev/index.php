@@ -75,6 +75,11 @@ setcookie("DoNotShowRegistrationPopup", $value);
 				</div>
 		   </div>
 		</section>
+		<a href="https://play.google.com/store/apps/details?id=com.sigfxpro.sf" target="_blank" class="flex max-width-420-visible" style="width: 100%; margin-top: 30px;">
+			<object style="width:100%; pointer-events: none;" type="image/svg+xml" data="img/google-play-badge.svg?language=ru">
+				<img src="img/google-play-badge.svg">
+			</object>
+		</a>
 		<section class="info_blocks_container">
 			<div class="info_blocks_container_inner flex">
 				<div class="info_block recomendations flex">

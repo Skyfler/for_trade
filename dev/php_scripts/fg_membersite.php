@@ -1,23 +1,4 @@
 <?PHP
-/*
-	Registration/Login script from HTML Form Guide
-	V1.0
-
-	This program is free software published under the
-	terms of the GNU Lesser General Public License.
-	http://www.gnu.org/copyleft/lesser.html
-
-
-This program is distributed in the hope that it will
-be useful - WITHOUT ANY WARRANTY; without even the
-implied warranty of MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE.
-
-For updates, please visit:
-http://www.html-form-guide.com/php-form/php-registration-form.html
-http://www.html-form-guide.com/php-form/php-login-form.html
-
-*/
 require_once("class.phpmailer.php");
 require_once("formvalidator.php");
 
@@ -365,6 +346,33 @@ class FGMembersite
 		return $resObj;
 	}
 
+	function findReferer() {
+		$refsArr = array(
+			"facebook." => '1',
+			"twitter." => '2',
+			"google." => '3' ,
+			"vk." => '4' ,
+			"bing." => '5' ,
+			"yandex." => '6' ,
+			"instagram." => '11',
+			"youtube." => '12'
+		);
+
+		if (isset($_SERVER['HTTP_REFERER'])) {
+			$referringPage = parse_url( $_SERVER['HTTP_REFERER'] );
+			if ( isset( $referringPage['host'] )) {
+				$referringHost = $referringPage['host'];
+				foreach ($refsArr as $key => $value) {
+					if (strpos(strtolower($referringHost),$key) !== false) {
+						return $value;
+					}
+				}
+			}
+		}
+
+		return false;
+	}
+
 	//-------Private Helper functions-----------
 
 	function HandleError($err)
@@ -394,6 +402,11 @@ class FGMembersite
 
 		$from ="nobody@$host";
 		return $from;
+	}
+
+	function GetFromName()
+	{
+		return 'Администрация SigFXpro';
 	}
 
 	function GetLoginSessionVar()
@@ -529,17 +542,19 @@ class FGMembersite
 		// $mailer->AddAddress($user_rec['email'],$user_rec['name']);
 		$mailer->AddAddress($user_rec['email'],'');
 
-		$mailer->Subject = "Welcome to ".$this->sitename;
+		$mailer->Subject = "Добро пожаловать на ".$this->sitename;
 
 		$mailer->From = $this->GetFromAddress();
+		$mailer->FromName = $this->GetFromName();
 
-		$mailer->Body ="Hello "."\r\n\r\n".
-		"Welcome! Your registration with ".$this->sitename." is completed.\r\n".
-		"Here is your password: " . $user_rec['password'] . "\r\n".
-		"\r\n".
-		"Regards,\r\n".
-		"Webmaster\r\n".
-		$this->sitename;
+		$mailer->Body ="<p>Здравствуйте<br><br>".
+		"Ваша регистрация на сайте ".$this->sitename." прошла успешно.<br>".
+		"Ваш пароль: " . $user_rec['password'] . "<br><br>".
+		"С уважением,<br>".
+		"Администрация сайта<br>".
+		"$this->sitename</p>";
+
+		$mailer->IsHTML(true);
 
 		if (isset($includeSentEmailsInResponse) && $includeSentEmailsInResponse === true) $this->HandleErrorObj((object) ['type' => 'mailer', 'code' => 'sent', 'error' => $mailer->Body]);
 
@@ -564,12 +579,15 @@ class FGMembersite
 
 		$mailer->AddAddress($this->admin_email);
 
-		$mailer->Subject = "Registration Completed: " . $user_rec['email'];
+		$mailer->Subject = "Регистрация завершена: " . $user_rec['email'];
 
 		$mailer->From = $this->GetFromAddress();
+		$mailer->FromName = $this->GetFromName();
 
-		$mailer->Body ="A new user registered at ".$this->sitename."\r\n".
-		"Email address: ".$user_rec['email']."\r\n";
+		$mailer->Body ="<p>Новый пользователь был зарегистрирован на сайте ".$this->sitename."<br>".
+		"Email address: ".$user_rec['email']."</p>";
+
+		$mailer->IsHTML(true);
 
 		if (isset($includeSentEmailsInResponse) && $includeSentEmailsInResponse === true) $this->HandleErrorObj((object) ['type' => 'mailer', 'code' => 'sent', 'error' => $mailer->Body]);
 
@@ -596,26 +614,31 @@ class FGMembersite
 		// $mailer->AddAddress($email,$user_rec['name']);
 		$mailer->AddAddress($email,'');
 
-		$mailer->Subject = "Your reset password request at ".$this->sitename;
+		$mailer->Subject = "Запрос на восстановление паролья на сайте ".$this->sitename;
 
 		$mailer->From = $this->GetFromAddress();
+		$mailer->FromName = $this->GetFromName();
 
 		$link = $this->GetAbsoluteURLFolder().
 				'/resetpwd.php?email='.
 				urlencode($email).'&code='.
 				urlencode($this->GetResetPasswordCode($email));
 
-		$mailer->Body ="Hello"."\r\n\r\n".
-		"There was a request to reset your password at ".$this->sitename."\r\n".
-		"Please click the link below to complete the request: \r\n".$link."\r\n".
-		"Regards,\r\n".
-		"Webmaster\r\n".
-		$this->sitename;
+		$mailer->Body ="<p>Добрый день<br><br>".
+		"Мы получили запрос на восстановление пароля на сайте ".$this->sitename."<br>".
+		"Для восстановления пароля необходимо перейти по ссылке:<br>".
+		"$link<br><br>".
+		"<strong>В случае, если Вы не отправляли запрос на восстановление, просто проигнорируйте это сообщение.</strong><br><br>".
+		"С Уважением<br>".
+		"Администрация сайта<br>".
+		"$this->sitename</p>";
+
+		$mailer->IsHTML(true);
 
 		if (isset($includeSentEmailsInResponse) && $includeSentEmailsInResponse === true) $this->HandleErrorObj((object) ['type' => 'mailer', 'code' => 'sent', 'error' => $mailer->Body]);
 
 		if(!$mailer->Send())
-		{
+		{tion
 			return false;
 		}
 		return true;
@@ -632,17 +655,20 @@ class FGMembersite
 		// $mailer->AddAddress($email,$user_rec['name']);
 		$mailer->AddAddress($email,'');
 
-		$mailer->Subject = "Your new password for ".$this->sitename;
+		$mailer->Subject = "Ваш новый пароль для ".$this->sitename;
 
 		$mailer->From = $this->GetFromAddress();
+		$mailer->FromName = $this->GetFromName();
 
-		$mailer->Body ="Hello "."\r\n\r\n".
-		"Your password is reset successfully. ".
-		"Here is your updated password: $new_password\r\n".
-		"\r\n".
-		"Regards,\r\n".
-		"Webmaster\r\n".
-		$this->sitename;
+		$mailer->Body ="<p>Еще раз здравствуйте<br><br>".
+		"Ваш пароль был восстановлен успешно<br>".
+		"Пароли на нашем сайте генерируются автоматически, Ваш новый пароль:<br><strong>$new_password</strong><br>".
+		"<br>".
+		"Благодарим за пользование нашим сайтом,<br>".
+		"Администрация сайта<br>".
+		$this->sitename . "</p>";
+
+		$mailer->IsHTML(true);
 
 		if (isset($includeSentEmailsInResponse) && $includeSentEmailsInResponse === true) $this->HandleErrorObj((object) ['type' => 'mailer', 'code' => 'sent', 'error' => $mailer->Body]);
 
@@ -762,22 +788,24 @@ class FGMembersite
 		// $mailer->AddAddress($formvars['email'],$formvars['name']);
 		$mailer->AddAddress($formvars['email'],'');
 
-		$mailer->Subject = "Your registration with ".$this->sitename;
+		$mailer->Subject = "Подтверждение регистрации на сайте ".$this->sitename;
 
 		$mailer->From = $this->GetFromAddress();
+		$mailer->FromName = $this->GetFromName();
 
 		$confirmcode = $formvars['confirmcode'];
 
 		$confirm_url = $this->GetAbsoluteURLFolder().'/confirmreg.php?code='.$confirmcode;
 
-		$mailer->Body ="Hello "."\r\n\r\n".
-		"Thanks for your registration with ".$this->sitename."\r\n".
-		"Please click the link below to confirm your registration.\r\n".
-		"$confirm_url\r\n".
-		"\r\n".
-		"Regards,\r\n".
-		"Webmaster\r\n".
-		$this->sitename;
+		$mailer->Body ="<p>Добрый день<br><br>".
+		"Благодарим за регистрацию на сайте ".$this->sitename."<br>".
+		"Для продолжения пользования сайтом, пожалуйста подтвердите Вашу учетную запись, перейдя по ссылке.<br>".
+		"$confirm_url<br><br>".
+		"С уважением,<br>".
+		"Администрация сайта<br>".
+		"$this->sitename</p>";
+
+		$mailer->IsHTML(true);
 
 		if (isset($includeSentEmailsInResponse) && $includeSentEmailsInResponse === true) $this->HandleErrorObj((object) ['type' => 'mailer', 'code' => 'sent', 'error' => $mailer->Body]);
 
@@ -808,12 +836,15 @@ class FGMembersite
 
 		$mailer->AddAddress($this->admin_email);
 
-		$mailer->Subject = "New registration ".$formvars['email'];
+		$mailer->Subject = "Новый пользователь ".$formvars['email'];
 
 		$mailer->From = $this->GetFromAddress();
+		$mailer->FromName = $this->GetFromName();
 
-		$mailer->Body ="A new user registered at ".$this->sitename."\r\n".
-		"Email address: ".$formvars['email']."\r\n";
+		$mailer->Body ="<p>Новый пользователь был зарегистрирован на сайте ".$this->sitename."<br>".
+		"Email address: ".$formvars['email']."</p>";
+
+		$mailer->IsHTML(true);
 
 		if (isset($includeSentEmailsInResponse) && $includeSentEmailsInResponse === true) $this->HandleErrorObj((object) ['type' => 'mailer', 'code' => 'sent', 'error' => $mailer->Body]);
 
@@ -1004,4 +1035,23 @@ class FGMembersite
 		return $str;
 	}
 }
+/*
+	Registration/Login script from HTML Form Guide
+	V1.0
+
+	This program is free software published under the
+	terms of the GNU Lesser General Public License.
+	http://www.gnu.org/copyleft/lesser.html
+
+
+This program is distributed in the hope that it will
+be useful - WITHOUT ANY WARRANTY; without even the
+implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.
+
+For updates, please visit:
+http://www.html-form-guide.com/php-form/php-registration-form.html
+http://www.html-form-guide.com/php-form/php-login-form.html
+
+*/
 ?>

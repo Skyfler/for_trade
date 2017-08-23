@@ -54,7 +54,7 @@ ContactFormController.prototype._onReqEnd = function(xhr) {
 	if (!this._elem) return;
 
 	this._waitingForResponse = false;
-	this._elem.classList.remove('waiting_for_response');
+//	this._elem.classList.remove('waiting_for_response');
 
 	var res;
 
@@ -79,6 +79,7 @@ ContactFormController.prototype._onReqEnd = function(xhr) {
 				this._callback();
 			}
 		} else {
+			this._elem.classList.remove('waiting_for_response');
 			this._onSetInputsValidationError(res.errors);
 		}
 	} else {

@@ -43,7 +43,7 @@ setcookie("DoNotShowRegistrationPopup", $value);
 			<p><a href="mailto:info@sigfxpro.com">info@sigfxpro.com</a></p>
 		</div>
 		<div class="block">
-			<p class="title">FAQs - Часто задаваемые вопросы</p>
+			<p class="title">FAQ - Часто задаваемые вопросы</p>
 			<!--<p class="sub_title">Email</p>-->
 			<div class="dropdown_group">
 				<div class="closed droppownGroupItem">

@@ -1,0 +1,87 @@
+.banner .contact_form {
+	background: none;
+}
+
+.banner .contact_form .waiting_block {
+	background-color: transparent;
+}
+
+.banner .contact_form .form_inner_container {
+	border-bottom: none;
+	max-height: none;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.banner .contact_form .input_group {
+	padding: 0 5px;
+	margin-bottom: 10px;
+}
+.banner .contact_form .input_group.input_submit {
+	margin-top: 0px;
+}
+.banner .contact_form .input_group.input_phone_code {
+	width: 134px;
+}
+.banner .contact_form .input_group.input_phone_num {
+	width: calc(100% - 134px);
+}
+
+.banner .contact_form input[type="text"],
+.banner .contact_form input[type="email"],
+.banner .contact_form input[type="tel"],
+.banner .contact_form input[type="password"],
+.banner .contact_form textarea,
+.banner .contact_form select {
+	background: rgba(0, 0, 0, 0.35);
+	color: #fff;
+	padding-right: 10px;
+	padding-left: 10px;
+	border: 1px solid #fff;
+	font-weight: 700;
+	font-size: 22px;
+	text-shadow: 0 0 3px #000;
+}
+
+.banner .contact_form input[type="text"]:focus,
+.banner .contact_form input[type="email"]:focus,
+.banner .contact_form input[type="tel"]:focus,
+.banner .contact_form input[type="password"]:focus,
+.banner .contact_form textarea:focus,
+.banner .contact_form select:focus {
+	border-color: #fff;
+}
+
+.banner .contact_form select option {
+	color: #000;
+	text-shadow: none;
+	background: #fff;
+}
+
+.banner .contact_form input::placeholder {opacity: 1; color: #fff;}
+.banner .contact_form textarea::placeholder {opacity: 1; color: #fff;}
+.banner .contact_form select::placeholder {opacity: 1; color: #fff;}
+
+.banner .contact_form .submit {
+	display: block;
+	max-width: none;
+	font-size: 18px;
+	padding: 9px 0 10px;
+}
+
+@media screen and (min-width: 768px) {
+
+	.banner .contact_form {
+		/*max-width: none;*/
+	}
+
+	.banner .contact_form .form_inner_container {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+
+	.banner .contact_form .input_group {
+		/*width: 50%;*/
+	}
+
+}
