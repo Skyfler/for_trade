@@ -36,7 +36,7 @@
 
 		<input type='hidden' name='submitted' id='submitted' value='1' data-component="form-input">
 
-		<input type='text' class='spmhidip' name='<?php echo $fgmembersite->GetSpamTrapInputName(); ?>' data-component="form-input">
+<!--		<input type='text' class='spmhidip' name='<?php echo $fgmembersite->GetSpamTrapInputName(); ?>' data-component="form-input">-->
 
 		<?php if (isset($noTitle) && $noTitle === true) {?>
 
@@ -365,7 +365,7 @@
 				<div class="instruction_info">Рекомендуем ознакомиться с <a href="instruction">инструкцией</a>.</div>
 			</div>
 		<?php } ?>
-		</div>
+	</div>
 </form>
 <?php if (!isset($beforeRegistrationSubmitFunction)) {?>
 	<script>

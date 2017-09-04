@@ -2,6 +2,8 @@
 require_once("class.phpmailer.php");
 require_once("formvalidator.php");
 
+header("access-control-allow-origin: https://lp.sigfxpro.com");
+
 $includeSentEmailsInResponse = false;
 
 class FGMembersite
@@ -638,7 +640,7 @@ class FGMembersite
 		if (isset($includeSentEmailsInResponse) && $includeSentEmailsInResponse === true) $this->HandleErrorObj((object) ['type' => 'mailer', 'code' => 'sent', 'error' => $mailer->Body]);
 
 		if(!$mailer->Send())
-		{tion
+		{
 			return false;
 		}
 		return true;
@@ -682,13 +684,13 @@ class FGMembersite
 	function ValidateRegistrationSubmission()
 	{
 		//This is a hidden input field. Humans won't fill this field.
-		if(!empty($_POST[$this->GetSpamTrapInputName()]) )
-		{
-			//The proper error is not given intentionally
-			// $this->HandleError("Automated submission prevention: case 2 failed");
-			$this->HandleErrorObj((object) ['type' => 'other', 'error' => "Automated submission prevention: case 2 failed"]);
-			return false;
-		}
+//		if(!empty($_POST[$this->GetSpamTrapInputName()]) )
+//		{
+//			//The proper error is not given intentionally
+//			// $this->HandleError("Automated submission prevention: case 2 failed");
+//			$this->HandleErrorObj((object) ['type' => 'other', 'error' => "Automated submission prevention: case 2 failed"]);
+//			return false;
+//		}
 
 		$validator = new FormValidator();
 		$validator->addValidation("first_name","req","Please fill in First Name");
